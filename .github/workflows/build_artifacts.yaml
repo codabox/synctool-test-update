@@ -1,0 +1,58 @@
+name: Build artifacts
+on:
+  - workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@master
+        with:
+          node-version: 17.3.0
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: install dependencies
+        run: yarn install
+      - name: build
+        run: yarn make
+      - name: retain windows artifacts
+        uses: actions/upload-artifact@v3
+        if: matrix.os == 'windows-latest'
+        with:
+          name: windows
+          retention-days: 7
+          path: |
+            out/make/squirrel.windows/x64
+      - name: retain debian artifacts
+        uses: actions/upload-artifact@v3
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          name: deb
+          retention-days: 7
+          path: |
+            out/make/deb/x64
+      - name: retain rpm artifacts
+        uses: actions/upload-artifact@v3
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          name: rpm
+          retention-days: 7
+          path: |
+            out/make/rpm/x64
+      - name: retain mac artifacts
+        uses: actions/upload-artifact@v3
+        if: matrix.os == 'macos-latest'
+        with:
+          name: mac
+          retention-days: 7
+          path: |
+            out/make/zip/darwin/x64
