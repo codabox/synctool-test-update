@@ -1,6 +1,6 @@
 {
     "name": "CodaBox-SyncTool",
-    "productName": "CodaBox SyncTool",
+    "productName": "CodaBox SyncTool Test",
     "version": "0.3.10",
     "description": "CodaBox desktop client",
     "main": ".webpack/main",
@@ -25,14 +25,14 @@
                 "icon": "./src/main/favicon.ico",
                 "name": "CodaBox-SyncTool",
                 "win32metadata": {
-                    "ProductName": "CodaBox SyncTool"
+                    "ProductName": "CodaBox SyncTool Test"
                 }
             },
             "makers": [
                 {
                     "name": "@electron-forge/maker-squirrel",
                     "config": {
-                        "title": "CodaBox SyncTool",
+                        "title": "CodaBox SyncTool Test",
                         "iconUrl": "https://assets-cdn.codabox.com/favicon.ico",
                         "loadingGif": "./src/renderer/src/assets/installer.gif",
                         "setupIcon": "./src/main/favicon.ico"
