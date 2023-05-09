@@ -1,0 +1,19 @@
+---
+version: "3.7"
+
+services:
+    sftp:
+        image: atmoz/sftp:alpine
+        volumes:
+            - ./sftp:/home/foo/upload
+        ports:
+            - "2222:22"
+        command: foo:pass:1000
+    synctool:
+        build: .
+        volumes:
+            - ./:/app
+        cap_add:
+            - ALL
+        environment:
+            DISPLAY: host.docker.internal:0
