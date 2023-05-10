@@ -42,7 +42,7 @@ if (!applicationLock) {
 // Auto update
 require('update-electron-app')()
 
-const server = 'https://update.electronjs.org'
+const server = 'https://www.github.com'
 const feed = `${server}/codabox/synctool-test-update/${process.platform}-${process.arch}/${app.getVersion()}`
 
 autoUpdater.setFeedURL(feed)
