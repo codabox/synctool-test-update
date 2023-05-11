@@ -82,7 +82,7 @@
                     "config": {
                         "repository": {
                             "owner": "codabox",
-                            "name": "sync-tool"
+                            "name": "synctool-test-update"
                         },
                         "prerelease": true,
                         "draft": true
