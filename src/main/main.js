@@ -1,17 +1,6 @@
 /* global MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY MAIN_WINDOW_WEBPACK_ENTRY */
 /* global win:writable */
-const {
-    app,
-    // autoUpdater,
-    dialog,
-    ipcMain,
-    nativeImage,
-    safeStorage,
-    shell,
-    BrowserWindow,
-    Menu,
-    Tray,
-} = require('electron')
+const { app, dialog, ipcMain, nativeImage, safeStorage, shell, BrowserWindow, Menu, Tray } = require('electron')
 const fs = require('fs')
 const path = require('path')
 const Client = require('ssh2-sftp-client')
@@ -41,31 +30,6 @@ if (!applicationLock) {
 
 // Auto update
 require('update-electron-app')()
-
-// const server = 'https://www.github.com'
-// const feed = `${server}/codabox/synctool-test-update/${process.platform}-${process.arch}/${app.getVersion()}`
-
-// autoUpdater.setFeedURL(feed)
-
-// setInterval(() => {
-//     autoUpdater.checkForUpdates()
-// }, 10000)
-
-// autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-//     const dialogOpts = {
-//         type: 'info',
-//         buttons: ['Restart', 'Later'],
-//         title: 'Application Update',
-//         message: process.platform === 'win32' ? releaseNotes : releaseName,
-//         detail:
-//         'A new version has been downloaded. Restart the application to apply the updates. ' +
-//         'Please do it now because I realy want you to have the latest version',
-//     }
-
-//     dialog.showMessageBox(dialogOpts).then((returnValue) => {
-//         if (returnValue.response === 0) autoUpdater.quitAndInstall()
-//     })
-// })
 
 function getLogPath () {
     return path.join(app.getPath('userData'), 'logs')

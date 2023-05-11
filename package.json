@@ -1,7 +1,7 @@
 {
     "name": "CodaBox-SyncTool",
     "productName": "CodaBox SyncTool Test",
-    "version": "0.3.14",
+    "version": "0.3.15",
     "description": "CodaBox desktop client",
     "main": ".webpack/main",
     "scripts": {
@@ -13,7 +13,7 @@
         "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix",
         "test": "jest"
     },
-    "repository": "https://github.com/codabox/sync-tool-artefacts",
+    "repository": "https://github.com/codabox/synctool-test-update",
     "author": {
         "name": "CodaBox",
         "email": "support@codabox.com"
