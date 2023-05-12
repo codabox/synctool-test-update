@@ -66,8 +66,7 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
         title: 'CodaBox SyncTool Update',
         message: process.platform === 'win32' ? releaseNotes : releaseName,
         detail:
-        'A new version has been downloaded. Restart the application to apply the updates. ' +
-        'Please do it now because I realy want you to have the latest version 4',
+        'A new version of the CodaBox SyncTool has been downloaded. Restart the application to apply the updates.',
     }
     log('Update downloaded 2', 'test')
 
