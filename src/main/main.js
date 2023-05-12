@@ -75,10 +75,10 @@ setInterval(() => {
 //         if (returnValue.response === 0) autoUpdater.quitAndInstall()
 //     })
 // })
-// autoUpdater.on('error', (message) => {
-//     log('There was a problem updating the application', 'error')
-//     log(message, 'error')
-// })
+autoUpdater.on('error', (message) => {
+    log('There was a problem updating the application', 'error')
+    log(message, 'error')
+})
 
 function getLogPath () {
     return path.join(app.getPath('userData'), 'logs')
