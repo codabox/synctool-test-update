@@ -45,39 +45,40 @@ if (!applicationLock) {
 // Auto update
 // require('update-electron-app')()
 
-const server = 'https://www.github.com'
-const feed = `${server}/codabox/synctool-test-update/${process.platform}-${process.arch}/${app.getVersion()}`
+const server = 'https://update.electronjs.org'
+const feed = `${server}/codabox/synctool-test-update/${app.getVersion()}`
 
 autoUpdater.setFeedURL(feed)
 
 setInterval(() => {
     log('Interval print', 'test')
+    log(feed, 'url')
     autoUpdater.checkForUpdates()
     log('Update downloaded', 'test')
 }, 10000)
 
-autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-    log('Update downloaded', 'test')
-    log(feed, 'url')
-    const dialogOpts = {
-        type: 'info',
-        buttons: ['Restartssss', 'Later'],
-        title: 'Application Update',
-        message: process.platform === 'win32' ? releaseNotes : releaseName,
-        detail:
-        'A new version has been downloaded. Restart the application to apply the updates. ' +
-        'Please do it now because I realy want you to have the latest version',
-    }
-    log('Update downloaded 2', 'test')
+// autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+//     log('Update downloaded', 'test')
+//     log(feed, 'url')
+//     const dialogOpts = {
+//         type: 'info',
+//         buttons: ['Restartssss', 'Later'],
+//         title: 'Application Update',
+//         message: process.platform === 'win32' ? releaseNotes : releaseName,
+//         detail:
+//         'A new version has been downloaded. Restart the application to apply the updates. ' +
+//         'Please do it now because I realy want you to have the latest version',
+//     }
+//     log('Update downloaded 2', 'test')
 
-    dialog.showMessageBox(dialogOpts).then((returnValue) => {
-        if (returnValue.response === 0) autoUpdater.quitAndInstall()
-    })
-})
-autoUpdater.on('error', (message) => {
-    log('There was a problem updating the application', 'error')
-    log(message, 'error')
-})
+//     dialog.showMessageBox(dialogOpts).then((returnValue) => {
+//         if (returnValue.response === 0) autoUpdater.quitAndInstall()
+//     })
+// })
+// autoUpdater.on('error', (message) => {
+//     log('There was a problem updating the application', 'error')
+//     log(message, 'error')
+// })
 
 function getLogPath () {
     return path.join(app.getPath('userData'), 'logs')
