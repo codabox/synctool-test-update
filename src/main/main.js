@@ -67,7 +67,7 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
         message: process.platform === 'win32' ? releaseNotes : releaseName,
         detail:
         'A new version has been downloaded. Restart the application to apply the updates. ' +
-        'Please do it now because I realy want you to have the latest version 2',
+        'Please do it now because I realy want you to have the latest version 3',
     }
     log('Update downloaded 2', 'test')
 
