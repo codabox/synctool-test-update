@@ -58,6 +58,7 @@ setInterval(() => {
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     log('Update downloaded', 'test')
+    log(feed, 'url')
     const dialogOpts = {
         type: 'info',
         buttons: ['Restartssss', 'Later'],
@@ -67,6 +68,7 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
         'A new version has been downloaded. Restart the application to apply the updates. ' +
         'Please do it now because I realy want you to have the latest version',
     }
+    log('Update downloaded 2', 'test')
 
     dialog.showMessageBox(dialogOpts).then((returnValue) => {
         if (returnValue.response === 0) autoUpdater.quitAndInstall()
