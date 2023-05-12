@@ -1,7 +1,7 @@
 {
     "name": "CodaBox-SyncTool",
     "productName": "CodaBox SyncTool Test 2",
-    "version": "0.3.40",
+    "version": "0.3.41",
     "description": "CodaBox desktop client",
     "main": ".webpack/main",
     "scripts": {

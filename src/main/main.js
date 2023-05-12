@@ -74,6 +74,7 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     dialog.showMessageBox(dialogOpts).then((returnValue) => {
         if (returnValue.response === 0) {
             log('Clicked the right button', 'test')
+            app.isQuiting = true
             autoUpdater.quitAndInstall()
         }
     })
