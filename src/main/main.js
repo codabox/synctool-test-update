@@ -39,6 +39,9 @@ if (!applicationLock) {
     })
 }
 
+// const logger = require('electron').remote.require('./logger')
+// const logger = require('electron-log')
+
 // Auto update
 // require('update-electron-app')()
 
@@ -48,10 +51,13 @@ const feed = `${server}/codabox/synctool-test-update/${process.platform}-${proce
 autoUpdater.setFeedURL(feed)
 
 setInterval(() => {
+    log('Interval print', 'test')
     autoUpdater.checkForUpdates()
+    log('Update downloaded', 'test')
 }, 10000)
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+    log('Update downloaded', 'test')
     const dialogOpts = {
         type: 'info',
         buttons: ['Restartssss', 'Later'],
@@ -67,8 +73,8 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     })
 })
 autoUpdater.on('error', (message) => {
-    console.error('There was a problem updating the application')
-    console.error(message)
+    log('There was a problem updating the application', 'error')
+    log(message, 'error')
 })
 
 function getLogPath () {
