@@ -55,7 +55,7 @@ setInterval(() => {
     log(feed, 'url')
     autoUpdater.checkForUpdates()
     log('Update downloaded', 'test')
-}, 10000)
+}, 60 * 1000)
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     log('Update downloaded 1', 'test')
@@ -63,11 +63,11 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     const dialogOpts = {
         type: 'info',
         buttons: ['Restartssss', 'Later'],
-        title: 'Application Update',
+        title: 'CodaBox SyncTool Update',
         message: process.platform === 'win32' ? releaseNotes : releaseName,
         detail:
         'A new version has been downloaded. Restart the application to apply the updates. ' +
-        'Please do it now because I realy want you to have the latest version',
+        'Please do it now because I realy want you to have the latest version 2',
     }
     log('Update downloaded 2', 'test')
 
