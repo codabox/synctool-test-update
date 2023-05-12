@@ -55,7 +55,7 @@ setInterval(() => {
     log(feed, 'url')
     autoUpdater.checkForUpdates()
     log('Update downloaded', 'test')
-}, 60 * 1000)
+}, 5 * 60 * 1000)
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     log('Update downloaded 1', 'test')
@@ -67,7 +67,7 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
         message: process.platform === 'win32' ? releaseNotes : releaseName,
         detail:
         'A new version has been downloaded. Restart the application to apply the updates. ' +
-        'Please do it now because I realy want you to have the latest version 3',
+        'Please do it now because I realy want you to have the latest version 4',
     }
     log('Update downloaded 2', 'test')
 
