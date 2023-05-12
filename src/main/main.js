@@ -442,6 +442,7 @@ app.whenReady().then(() => {
 
     win.on('close', function (event) {
         log('close test', 'closeLogs')
+        log(app.isQuiting, 'closeLogs')
         if (!app.isQuiting) {
             event.preventDefault()
             if (process.platform === 'darwin') {
