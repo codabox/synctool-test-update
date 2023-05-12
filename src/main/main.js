@@ -72,7 +72,10 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     log('Update downloaded 2', 'test')
 
     dialog.showMessageBox(dialogOpts).then((returnValue) => {
-        if (returnValue.response === 0) autoUpdater.quitAndInstall()
+        if (returnValue.response === 0) {
+            log('Clicked the right button', 'test')
+            autoUpdater.quitAndInstall()
+        }
     })
 })
 autoUpdater.on('error', (message) => {
@@ -438,6 +441,7 @@ app.whenReady().then(() => {
     })
 
     win.on('close', function (event) {
+        log('close test', 'closeLogs')
         if (!app.isQuiting) {
             event.preventDefault()
             if (process.platform === 'darwin') {
