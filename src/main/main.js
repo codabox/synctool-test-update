@@ -62,7 +62,7 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     log(feed, 'url')
     const dialogOpts = {
         type: 'info',
-        buttons: ['Restartssss', 'Later'],
+        buttons: ['Restart', 'Later'],
         title: 'CodaBox SyncTool Update',
         message: process.platform === 'win32' ? releaseNotes : releaseName,
         detail:
