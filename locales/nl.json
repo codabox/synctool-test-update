@@ -47,5 +47,6 @@
     "connectionName": "Naam van de verbinding",
     "openDownloadFolder": "Open download map",
     "showLogs": "Toon logs",
-    "isRequired": "Dit veld is verplicht"
+    "isRequired": "Dit veld is verplicht",
+    "updateDetail": "Er is een nieuwe versie beschikbaar van de  CodaBox SyncTool. Herstart de applicatie om de update uit te voeren."
 }

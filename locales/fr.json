@@ -47,5 +47,6 @@
     "connectionName": "Nom de la connexion",
     "openDownloadFolder": "Ouvrir l'emplacement du dossier de téléchargement",
     "showLogs": "Ouvrir logs",
-    "isRequired": "Ce champ est requis"
+    "isRequired": "Ce champ est requis",
+    "updateDetail": "A new version of the CodaBox SyncTool has been downloaded. Restart the application to apply the updates."
 }
